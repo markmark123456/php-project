@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* Учитываем границы и отступы в ширине и высоте */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #7d83cd;
+}
+
+header {
+    background-color: cornflowerblue;
+}
+
+nav a:hover {
+    color: #490b00;          /* Цвет ссылки при наведении */
+}
+
+.header-container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Стили для формы поиска */
+.search-container form {
+    display: flex;            /* Используем flexbox для размещения input и кнопки */
+    align-items: center;      /* Центрируем элементы по вертикали */
+}
+
+.search-container input {
+    padding: 8px 12px;        /* Отступы внутри поля ввода */
+    font-size: 16px;          /* Размер шрифта */
+    border: 1px solid #ccc;   /* Легкая граница */
+    border-radius: 4px;       /* Закругленные углы */
+    margin-right: 10px;       /* Отступ от кнопки */
+}
+
+.search-container button {
+    padding: 8px 15px;        /* Отступы внутри кнопки */
+    font-size: 16px;          /* Размер шрифта */
+    background-color: #efa700;/* Цвет кнопки */
+    color: white;             /* Белый цвет текста на кнопке */
+    border: none;             /* Без границ */
+    border-radius: 4px;       /* Закругленные углы */
+    cursor: pointer;          /* Курсор при наведении */
+}
+
+.search-container button:hover {
+    background-color: #785201; /* Цвет кнопки при наведении */
+}
+
