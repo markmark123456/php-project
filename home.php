@@ -1,5 +1,5 @@
 <?php
-session_start(); // важно вызывать до вывода любого текста, даже до echo "hello world"
+session_start();
 $user = $_SESSION['user'] ?? null;
 ?>
 
@@ -20,7 +20,7 @@ $user = $_SESSION['user'] ?? null;
             </div>
 
             <div class="site-title">
-               <h3>Добра пожаловать в Умный дом</h3>
+               <h3>Добро пожаловать в Умный дом</h3>
             </div>
 
             <div class="search-container">
@@ -32,7 +32,7 @@ $user = $_SESSION['user'] ?? null;
 
             <div>
                 <?php if (isset($user)): ?>
-                    <p>Здравствуйте, <?= htmlspecialchars($user) ?>!</p>
+                    <p>Здравствуйте, <?= htmlspecialchars($user['username'] ?? '') ?>!</p>
                     <a href="logout.php">Выйти</a>
                 <?php else: ?>
                     <a href="login.php">Войти</a> | <a href="registration.php">Регистрация</a>

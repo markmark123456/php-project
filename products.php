@@ -23,7 +23,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Список товаров</h1>
 
     <?php if ($user): ?>
-        <form action="make_order.php" method="post">
+        <form action="add_to_cart.php" method="post">
             <div class="product-list">
                 <?php foreach ($products as $product): ?>
                     <div class="product">
@@ -38,7 +38,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 <?php endforeach; ?>
             </div>
-            <button type="submit">Оформить заказ</button>
+            <button type="submit">добавить в корзину</button>
         </form>
     <?php else: ?>
         <p><a href="login.php">Войдите</a>, чтобы сделать заказ</p>

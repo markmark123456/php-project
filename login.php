@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             // Успешная авторизация
             session_start();
-            $_SESSION['user'] = $user['username'];
+            $_SESSION['user'] = $user;  // сохраняем весь массив с данными пользователя
             header('Location: home.php'); // Страница после входа
             exit;
         } else {
