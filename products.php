@@ -21,6 +21,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h1>Список товаров</h1>
+    <?php if (isset($_GET['added'])): ?>
+        <p style="color: green;">Товар добавлен в корзину!</p>
+    <?php endif; ?>
+
 
     <?php if ($user): ?>
         <div class="product-list">
