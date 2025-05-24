@@ -49,7 +49,8 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </li>
             <?php endforeach; ?>
         </ul>
-        <a href="make_order.php">Оформить заказ</a>
+        <a href="make_order.php">Оформить заказ</a><br>
     <?php endif; ?>
+    <a href="home.php">назад</a>
 </body>
 </html>
