@@ -7,6 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 $user = $_SESSION['user'] ?? null;
 ?>
 
+<link rel="stylesheet" href="assets/css/header.css" />
 <header>
     <div class="header-container">
 
