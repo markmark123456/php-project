@@ -38,6 +38,11 @@ $user = $_SESSION['user'] ?? null;
                     <a href="login.php">Войти</a> | <a href="registration.php">Регистрация</a>
                 <?php endif; ?>
             </div>
+            <div>
+                <?php if (isset($user)): ?>
+                    <a href="cart.php">🛒 Корзина</a>
+                <?php endif; ?>
+            </div>
 
              <nav>
                 <ul>
