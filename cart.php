@@ -14,9 +14,35 @@ if (!$user) {
 
 $userId = $user['id'];
 
+// Обработка изменения количества и удаления товара
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $productId = $_POST['product_id'] ?? null;
+
+    if ($productId) {
+        if (isset($_POST['update_quantity'])) {
+            $quantity = (int)$_POST['quantity'];
+            if ($quantity < 1) {
+                $quantity = 1;
+            }
+
+            $sql = "UPDATE cart SET quantity = ? WHERE user_id = ? AND product_id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$quantity, $userId, $productId]);
+
+        } elseif (isset($_POST['delete_item'])) {
+            $sql = "DELETE FROM cart WHERE user_id = ? AND product_id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$userId, $productId]);
+        }
+    }
+
+    header('Location: cart.php');
+    exit;
+}
+
 // Получаем содержимое корзины с данными о товарах, включая изображения
 $sql = "
-    SELECT p.title, p.price, p.description, p.image, c.quantity
+    SELECT p.id as product_id, p.title, p.price, p.description, p.image, c.quantity
     FROM cart c
     JOIN product p ON c.product_id = p.id
     WHERE c.user_id = ?
@@ -37,7 +63,7 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1>Ваша корзина</h1>
     <a href="index.php">назад</a>
-    
+
     <?php if (empty($cartItems)): ?>
         <p>Корзина пуста.</p>
     <?php else: ?>
@@ -53,11 +79,21 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="product-info">
                         <strong><?= htmlspecialchars($item['title']) ?></strong>
                         <p>Цена: <?= $item['price'] ?> ₽</p>
-                        <p>Кол-во: <?= $item['quantity'] ?></p>
+
+                        <form class="cart-item-form" method="post" action="cart_update.php">
+                        <div class="update-row">
+                            <input type="number" name="quantity" value="1" min="1" />
+                            <button type="submit" name="update_item">Обновить</button>
+                        </div>
+                        <button type="submit" name="delete_item">Удалить</button>
+                        <input type="hidden" name="cart_id" value="123" />
+                        </form>
+
+
+
                         <p>Сумма: <?= $item['price'] * $item['quantity'] ?> ₽</p>
                     </div>
                 </li>
-
             <?php endforeach; ?>
         </ul>
         <a href="make_order.php">Оформить заказ</a><br>

@@ -62,10 +62,42 @@ a {
     display: inline-block;
     margin: 20px 0; /* сверху и снизу по 20px */
     text-decoration: none;
-
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
 }
+
+.cart-item-form {
+    display: flex;
+    flex-direction: column; /* вертикальный столбец */
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.cart-item-form .update-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-form input[type="number"] {
+    padding: 3px;
+    width: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cart-item-form button {
+    cursor: pointer;
+    padding: 5px 12px;
+    font-weight: bold;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
