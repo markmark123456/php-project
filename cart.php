@@ -37,6 +37,7 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1>Ваша корзина</h1>
     <a href="index.php">назад</a>
+    
     <?php if (empty($cartItems)): ?>
         <p>Корзина пуста.</p>
     <?php else: ?>

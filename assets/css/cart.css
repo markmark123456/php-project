@@ -1,16 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1, a {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* перенос если не влезает */
+    justify-content: center;
+    gap: 20px; /* расстояние между карточками */
+    max-width: 1200px;
+}
+
 ul li {
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 15px;
-    margin-bottom: 15px;
     display: flex;
-    align-items: center; /* выравнивание по центру вертикали */
+    align-items: center;
     background-color: #fff;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    max-width: 600px; /* ограничим ширину */
+    width: 400px; /* сделаем немного длиннее */
     gap: 20px;
 }
-
 
 ul li img {
     border-radius: 8px;
@@ -23,7 +45,7 @@ ul li .product-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 450px; /* ширина текста */
+    max-width: 260px; /* чтобы текст не растекался */
 }
 
 ul li .product-info p {
@@ -31,7 +53,19 @@ ul li .product-info p {
 }
 
 ul li .product-info strong {
-    margin-top: 10px; /* отступ сверху */
+    margin-top: 10px;
     font-size: 1.2em;
     align-self: flex-start;
+}
+
+a {
+    display: inline-block;
+    margin: 20px 0; /* сверху и снизу по 20px */
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
 }

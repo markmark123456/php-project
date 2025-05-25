@@ -66,7 +66,7 @@ if (!$product) {
                         <input type="number" name="quantity" value="1" min="1">
                     </label>
                     <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                    <button type="submit">Добавить в корзину</button>
+                    <br><button type="submit">Добавить в корзину</button>
                 </form>
             <?php else: ?>
                 <p><a href="login.php">Войдите</a>, чтобы добавить в корзину</p>
