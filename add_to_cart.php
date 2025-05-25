@@ -37,5 +37,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'], $_POST[
     }
 }
 
-header('Location: home.php?added=1');
+header('Location: index.php?added=1');
 exit;

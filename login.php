@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Успешная авторизация
             session_start();
             $_SESSION['user'] = $user;  // сохраняем весь массив с данными пользователя
-            header('Location: home.php'); // Страница после входа
+            header('Location: index.php'); // Страница после входа
             exit;
         } else {
             $message = '❌ Неверное имя пользователя или пароль.';
@@ -48,6 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" name="password" placeholder="Введите пароль" required>
         <button type="submit">Войти</button>
     </form>
-    <a href="home.php">назад</a>
+    <a href="index.php">назад</a>
 </body>
 </html>

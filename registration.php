@@ -51,6 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit">Зарегистрироваться</button>
     </form>
-    <a href="home.php">назад</a>
+    <a href="index.php">назад</a>
 </body>
 </html>

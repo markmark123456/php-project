@@ -39,7 +39,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <h2><?= htmlspecialchars($product['title']) ?></h2>
                 <p><?= htmlspecialchars($product['description']) ?></p>
                 <p>Цена: <?= htmlspecialchars($product['price']) ?>сом</p>
-                
+                <a href="product_page.php?id=<?= $product['id'] ?>">Подробнее</a>                
                 
 
                 <?php if ($user): ?>
@@ -51,6 +51,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                         <button type="submit">Добавить в корзину</button>
                     </form>
+                    
                 <?php else: ?>
                     <p><a href="login.php">Войдите</a>, чтобы добавить в корзину</p>
                 <?php endif; ?>
