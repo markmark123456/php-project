@@ -6,6 +6,16 @@
     justify-content: center;
 }
 
+
+.product img {
+    display: block;            /* Сделать блочным элементом */
+    margin: 0 auto 10px auto;  /* Центрировать по горизонтали */
+    width: 150px;              /* Ширина картинки */
+    height: 150px;             /* Высота картинки */
+    object-fit: cover;         /* Обрезать изображение аккуратно */
+    border-radius: 8px;        /* Закруглённые края по желанию */
+}
+
 .product {
     border: 1px solid #ccc;
     padding: 15px;
