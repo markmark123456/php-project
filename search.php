@@ -19,7 +19,6 @@ if ($search) {
     ]);
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -32,37 +31,51 @@ if ($search) {
 </head>
 <body>
 
-    <?php include 'header.php'; ?>
+<?php include 'header.php'; ?>
 
-    <h1>Результаты поиска по запросу: <?= htmlspecialchars($search) ?></h1>
+<p><a href="index.php">← Назад на главную</a></p>
 
-    <?php if (empty($products)): ?>
-        <p>Ничего не найдено.</p>
-    <?php else: ?>
-        <div class="product-list">
-            <?php foreach ($products as $product): ?>
-                <div class="product">
-                    <h2><?= htmlspecialchars($product['title']) ?></h2>
-                    <p>Цена: <?= htmlspecialchars($product['price']) ?> ₽</p>
-                    <p><?= htmlspecialchars($product['description']) ?></p>
+<h1>Результаты поиска по запросу: <?= htmlspecialchars($search) ?></h1>
 
-                    <?php if ($user): ?>
-                        <form action="add_to_cart.php" method="post">
-                            <label>
-                                Кол-во:
-                                <input type="number" name="quantity" value="1" min="1">
-                            </label>
-                            <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                            <button type="submit">Добавить в корзину</button>
-                        </form>
-                    <?php else: ?>
-                        <p><a href="login.php">Войдите</a>, чтобы сделать заказ</p>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
+<?php if (empty($products)): ?>
+    <p>Ничего не найдено.</p>
+<?php else: ?>
+    <div class="product-list">
+        <?php foreach ($products as $product): ?>
+            <div class="product">
 
-    <p><a href="home.php">← Назад на главную</a></p>
+                <!-- ✅ Блок с картинкой -->
+                <?php if (!empty($product['image'])): ?>
+                    <img src="<?= htmlspecialchars($product['image']) ?>" alt="Изображение товара">
+                <?php else: ?>
+                    <img src="assets/images/no-image.png" alt="Нет изображения">
+                <?php endif; ?>
+
+                <h2><?= htmlspecialchars($product['title']) ?></h2>
+                <p>Цена: <?= htmlspecialchars($product['price']) ?> ₽</p>
+                <p><?= htmlspecialchars($product['description']) ?></p>
+
+                <a href="product_page.php?id=<?= $product['id'] ?>">Подробнее</a>
+
+                <?php if ($user): ?>
+                    <form action="add_to_cart.php" method="post">
+                        <label>
+                            Кол-во:
+                            <input type="number" name="quantity" value="1" min="1">
+                        </label>
+                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                        <button type="submit">Добавить в корзину</button>
+                    </form>
+                <?php else: ?>
+                    <p><a href="login.php">Войдите</a>, чтобы сделать заказ</p>
+                <?php endif; ?>
+
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+
+
 </body>
 </html>

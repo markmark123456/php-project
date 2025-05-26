@@ -31,3 +31,7 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.product-detail input[type="number"] {
+    width: 50px;
+}

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $productId = $_POST['product_id'] ?? null;
 
     if ($productId) {
-        if (isset($_POST['update_quantity'])) {
+        if (isset($_POST['update_item'])) {
             $quantity = (int)$_POST['quantity'];
             if ($quantity < 1) {
                 $quantity = 1;
@@ -80,16 +80,18 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <strong><?= htmlspecialchars($item['title']) ?></strong>
                         <p>Цена: <?= $item['price'] ?> ₽</p>
 
-                        <form class="cart-item-form" method="post" action="cart_update.php">
-                        <div class="update-row">
-                            <input type="number" name="quantity" value="1" min="1" />
-                            <button type="submit" name="update_item">Обновить</button>
-                        </div>
-                        <button type="submit" name="delete_item">Удалить</button>
-                        <input type="hidden" name="cart_id" value="123" />
+                        <form class="cart-item-form" method="post" action="cart.php">
+                            <div class="form-inline">
+                                <label for="quantity-<?= $item['product_id'] ?>">Кол-во:</label>
+                                <input id="quantity-<?= $item['product_id'] ?>" type="number" name="quantity" value="<?= $item['quantity'] ?>" min="1" />
+                                <br><button type="submit" name="update_item">Обновить</button>
+                                <button type="submit" name="delete_item">Удалить</button>
+                            </div>
+                            <input type="hidden" name="product_id" value="<?= $item['product_id'] ?>" />
                         </form>
 
 
+                        
 
                         <p>Сумма: <?= $item['price'] * $item['quantity'] ?> ₽</p>
                     </div>
