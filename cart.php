@@ -61,6 +61,8 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
+
+    <?php include 'header.php'; ?>
     <h1>Ваша корзина</h1>
     <a href="index.php">назад</a>
 
@@ -89,10 +91,6 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <input type="hidden" name="product_id" value="<?= $item['product_id'] ?>" />
                         </form>
-
-
-                        
-
                         <p>Сумма: <?= $item['price'] * $item['quantity'] ?> ₽</p>
                     </div>
                 </li>
