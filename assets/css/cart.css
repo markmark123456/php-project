@@ -1,103 +1,18 @@
-body {
+/* Обёртка для контента корзины */
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f8f8f8;
-    font-family: Arial, sans-serif;
     padding: 20px;
 }
 
-h1, a {
-    text-align: center;
-}
 
-ul {
-    list-style: none;
-    padding: 0;
+
+/* Внутренний контент хедера, если используется */
+.header-content {
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; /* перенос если не влезает */
-    justify-content: center;
-    gap: 20px; /* расстояние между карточками */
-    max-width: 1200px;
-}
-
-ul li {
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 400px; /* сделаем немного длиннее */
-    gap: 20px;
 }
-
-ul li img {
-    border-radius: 8px;
-    flex-shrink: 0;
-    max-width: 100px;
-    height: auto;
-}
-
-ul li .product-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    max-width: 260px; /* чтобы текст не растекался */
-}
-
-ul li .product-info p {
-    margin: 5px 0;
-}
-
-ul li .product-info strong {
-    margin-top: 10px;
-    font-size: 1.2em;
-    align-self: flex-start;
-}
-
-a {
-    display: inline-block;
-    margin: 20px 0; /* сверху и снизу по 20px */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.cart-item-form {
-    display: flex;
-    flex-direction: column; /* вертикальный столбец */
-    align-items: flex-start;
-    gap: 8px;
-    margin-top: 5px;
-}
-
-.cart-item-form .update-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.cart-item-form input[type="number"] {
-    padding: 3px;
-    width: 60px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* .cart-item-form button {
-    cursor: pointer;
-    padding: 5px 12px;
-    font-weight: bold;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    transition: background-color 0.3s ease;
-} */
-

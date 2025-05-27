@@ -39,6 +39,11 @@ $user = $_SESSION['user'] ?? null;
                 <a href="cart.php">🛒 Корзина</a>
             <?php endif; ?>
         </div>
+        <div>
+            <?php if (isset($user)): ?>
+                <a href="orders.php">заказы</a>
+            <?php endif; ?>
+        </div>
 
          <nav>
             <ul>

@@ -63,6 +63,7 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <?php include 'header.php'; ?>
+    <div class="container">
     <h1>Ваша корзина</h1>
     <a href="index.php">назад</a>
 
@@ -98,5 +99,6 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </ul>
         <a href="make_order.php">Оформить заказ</a><br>
     <?php endif; ?>
+</div>
 </body>
 </html>

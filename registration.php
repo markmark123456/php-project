@@ -35,9 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/registration.css">
 </head>
 <body>
+    <?php include 'header.php'; ?>
+
+    <div class="registration-page">
     <h2>Регистрация</h2>
     <?php if ($message): ?>
         <p><?= htmlspecialchars($message) ?></p>
@@ -52,5 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Зарегистрироваться</button>
     </form>
     <a href="index.php">назад</a>
+    </div>
 </body>
 </html>
