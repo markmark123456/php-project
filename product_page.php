@@ -36,13 +36,14 @@ if (!$product) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($product['title']) ?></title>
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css"/>
     <link rel="stylesheet" href="assets/css/products.css">
     <link rel="stylesheet" href="assets/css/product_page.css">
 </head>
 <body>
     <?php include 'header.php'; ?>
-    <a href="index.php">← Назад к товарам</a>
+    
+    <a href="index.php" class="back-link">← Назад к товарам</a>
 
     <div class="product-detail">
         <div class="product-image">

@@ -12,8 +12,11 @@ $user = $_SESSION['user'] ?? null;
     <div class="header-container">
 
         <div class="logo">
-            <img src="assets/images/5880208.png" alt="no img" width="50">
+            <a href="index.php">
+                <img src="assets/images/5880208.png" alt="no img" width="50">
+            </a>
         </div>
+
 
         <div class="site-title">
            <h3>Добро пожаловать в Умный дом</h3>
@@ -41,7 +44,7 @@ $user = $_SESSION['user'] ?? null;
         </div>
         <div>
             <?php if (isset($user)): ?>
-                <a href="orders.php">заказы</a>
+                <a href="orders.php">Заказы</a>
             <?php endif; ?>
         </div>
 

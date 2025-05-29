@@ -34,8 +34,9 @@ if ($search) {
 <?php include 'header.php'; ?>
 
 <p><a href="index.php">← Назад на главную</a></p>
-
-<h1>Результаты поиска по запросу: <?= htmlspecialchars($search) ?></h1>
+<div class="container">
+    <h3>Результаты поиска по запросу: <?= htmlspecialchars($search) ?></h3>
+</div>
 
 <?php if (empty($products)): ?>
     <p>Ничего не найдено.</p>

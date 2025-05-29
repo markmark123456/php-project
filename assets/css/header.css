@@ -1,46 +1,67 @@
-
-
-
 header {
     background-color: cornflowerblue;
+    width: 100%;
 }
 
-nav a:hover {
-    color: #490b00;          /* Цвет ссылки при наведении */
-}
-
+/* Обёртка, в которой только контент */
 .header-container {
     display: flex; 
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;       /* Центрированный контейнер */
+    margin: 0 auto;
+    width: 100%;
 }
 
+/* Первый и последний элемент в header с отступами */
+.header-container > *:first-child {
+    padding-left: 20px;
+}
 
-/* Стили для формы поиска */
+.header-container > *:last-child {
+    padding-right: 20px;
+}
+
+/* Навигационные ссылки */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #490b00;
+}
+
+/* Поисковая форма */
 .search-container form {
-    display: flex;            /* Используем flexbox для размещения input и кнопки */
-    align-items: center;      /* Центрируем элементы по вертикали */
+    display: flex;
+    align-items: center;
 }
 
 .search-container input {
-    padding: 8px 12px;        /* Отступы внутри поля ввода */
-    font-size: 16px;          /* Размер шрифта */
-    border: 1px solid #ccc;   /* Легкая граница */
-    border-radius: 4px;       /* Закругленные углы */
-    margin-right: 10px;       /* Отступ от кнопки */
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
 }
 
 .search-container button {
-    padding: 8px 15px;        /* Отступы внутри кнопки */
-    font-size: 16px;          /* Размер шрифта */
-    background-color: #efa700;/* Цвет кнопки */
-    color: white;             /* Белый цвет текста на кнопке */
-    border: none;             /* Без границ */
-    border-radius: 4px;       /* Закругленные углы */
-    cursor: pointer;          /* Курсор при наведении */
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #efa700;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .search-container button:hover {
-    background-color: #785201; /* Цвет кнопки при наведении */
+    background-color: #efa700;
 }
 
+.site-title {
+    color: rgb(227, 197, 2);
+}

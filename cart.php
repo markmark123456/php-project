@@ -64,8 +64,8 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php include 'header.php'; ?>
     <div class="container">
-    <h1>Ваша корзина</h1>
-    <a href="index.php">назад</a>
+    <h2>Ваша корзина</h2>
+    <a href="index.php">Назад</a>
 
     <?php if (empty($cartItems)): ?>
         <p>Корзина пуста.</p>
@@ -97,7 +97,7 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </li>
             <?php endforeach; ?>
         </ul>
-        <a href="make_order.php">Оформить заказ</a><br>
+        <a href="make_order.php" class="btn">Оформить заказ</a>
     <?php endif; ?>
 </div>
 </body>

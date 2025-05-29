@@ -23,22 +23,19 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Мои заказы</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; }
-        .order { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
-        .order h3 { margin-top: 0; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        table, th, td { border: 1px solid #aaa; }
-        th, td { padding: 8px; text-align: left; }
-    </style>
+    <link rel="stylesheet" href="assets/css/orders.css">
+    <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body>
 
 <?php include 'header.php'; ?>
 
-<p><a href="index.php">← Назад в магазин</a></p>
+<p><a href="index.php" class="back-link">← Назад в магазин</a></p>
 
-<h1>Мои заказы</h1>
+
+<div class="container">
+    <h2>Мои заказы</h2>
+</div>
 
 <?php if (empty($orders)): ?>
     <p>У вас пока нет заказов.</p>

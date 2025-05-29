@@ -20,11 +20,11 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </head>
 <body>
-    <h1>Список товаров</h1>
 
-    <?php if (isset($_GET['added'])): ?>
-        <p style="color: green;">Товар добавлен в корзину!</p>
-    <?php endif; ?>
+    <div class="container">
+        <h2>Список товаров</h2>
+    </div>
+    
 
     <div class="product-list">
         <?php foreach ($products as $product): ?>
@@ -57,6 +57,12 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
+    </div>
+    
+     <div class="container">
+    <?php if (isset($_GET['added'])): ?>
+        <p style="color: green;">Товар добавлен в корзину!</p>
+    <?php endif; ?>
     </div>
 </body>
 </html>

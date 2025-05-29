@@ -8,6 +8,77 @@
 
 
 
+.container h1, a {
+    text-align: center;
+}
+
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* перенос если не влезает */
+    justify-content: center;
+    gap: 20px; /* расстояние между карточками */
+    max-width: 1200px;
+}
+
+ul li {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 400px; /* сделаем немного длиннее */
+    gap: 20px;
+}
+
+.container ul li img {
+    border-radius: 8px;
+    flex-shrink: 0;
+    max-width: 100px;
+    height: auto;
+}
+
+.container ul li .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 260px; /* чтобы текст не растекался */
+}
+
+.container ul li .product-info p {
+    margin: 5px 0;
+}
+
+.container ul li .product-info strong {
+    margin-top: 10px;
+    font-size: 1.2em;
+    align-self: flex-start;
+}
+
+.container a {
+    display: inline-block;
+    margin: 20px 0; /* сверху и снизу по 20px */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.cart-item-form {
+    display: flex;
+    flex-direction: column; /* вертикальный столбец */
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.cart-item-form .update-row {
 /* Внутренний контент хедера, если используется */
 .header-content {
     max-width: 1200px;
@@ -15,4 +86,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
+
+.cart-item-form input[type="number"] {
+    padding: 3px;
+    width: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* зеленый фон */
+    color: white;              /* белый текст */
+    text-decoration: none;     /* убрать подчеркивание */
+    border-radius: 5px;        /* скругленные углы */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+
