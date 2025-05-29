@@ -27,13 +27,13 @@ if ($search) {
     <meta charset="UTF-8">
     <title>Результаты поиска</title>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/search.css">
 </head>
 <body>
 
 <?php include 'header.php'; ?>
 
-<p><a href="index.php">← Назад на главную</a></p>
+<p><a href="index.php" class="back-link">← Назад на главную</a></p>
 <div class="container">
     <h3>Результаты поиска по запросу: <?= htmlspecialchars($search) ?></h3>
 </div>
