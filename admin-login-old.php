@@ -1,5 +1,5 @@
 <?php
-require_once 'database/db.php';
+session_start();
 
 $message = '';
 
@@ -9,28 +9,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($username === '' || $password === '') {
         $message = 'Пожалуйста, заполните все поля.';
+    } elseif ($username === 'admin' && $password === 'adminpas') {
+        // Успешная авторизация
+        $_SESSION['user'] = [
+            'username' => 'admin',
+            'role' => 'administrator'
+        ];
+        header('Location: admin-page.php'); // Страница после входа
+        exit;
     } else {
-        // Получаем пользователя из базы данных
-        $sql = "SELECT * FROM users WHERE username = :username";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([':username' => $username]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user && $password === $user['password']) {
-            // Успешная авторизация
-            session_start();
-            $_SESSION['user'] = $user;  // сохраняем весь массив с данными пользователя
-
-            // Перенаправление по роли
-            if ($user['role'] === 'admin') {
-                header('Location: admin-page.php');
-            } else {
-                header('Location: index.php');
-            }
-            exit;
-        } else {
-            $message = '❌ Неверное имя пользователя или пароль.';
-        }
+        $message = '❌ Неверное имя пользователя или пароль.';
     }
 }
 ?>
@@ -57,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" name="password" placeholder="Введите пароль" required>
         <button type="submit">Войти</button>
     </form>
-    <a href="index.php">назад</a>
     </div>
 </body>
 </html>

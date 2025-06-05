@@ -10,17 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($username === '' || $password === '') {
         $message = 'Пожалуйста, заполните все поля.';
     } else {
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT); // Хешируем пароль
-
-        // Вставляем пользователя в БД
+        // Сохраняем пароль напрямую (небезопасно!)
         $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
         $stmt = $pdo->prepare($sql);
 
         try {
-            $stmt->execute([':username' => $username, ':password' => $passwordHash]);
+            $stmt->execute([':username' => $username, ':password' => $password]);
             $message = "✅ Пользователь успешно зарегистрирован!";
         } catch (PDOException $e) {
-            if ($e->getCode() == 23000) { // Нарушение уникальности (дубликат username)
+            if ($e->getCode() == 23000) {
                 $message = "Пользователь с таким именем уже существует.";
             } else {
                 $message = "Ошибка базы данных: " . $e->getMessage();

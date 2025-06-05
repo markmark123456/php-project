@@ -1,5 +1,5 @@
 .registration-page {
-    height: 100vh; /* вся высота экрана */
+    height: 80vh; /* вся высота экрана */
     display: flex;
     flex-direction: column;
     align-items: center;
