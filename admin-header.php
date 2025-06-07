@@ -12,7 +12,7 @@ $user = $_SESSION['user'] ?? null;
     <div class="header-container">
 
         <div class="logo">
-            <a href="index.php">
+            <a href="admin-page.php">
                 <img src="assets/images/5880208.png" alt="no img" width="50">
             </a>
         </div>
@@ -37,7 +37,7 @@ $user = $_SESSION['user'] ?? null;
         </div>
         <div>
             <?php if (isset($user)): ?>
-                <a href="orders.php">Заказы</a>
+                <a href="admin-orders.php">Заказы</a>
             <?php endif; ?>
         </div>
 

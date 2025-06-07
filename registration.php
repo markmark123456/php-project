@@ -6,17 +6,22 @@ $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
+    $phone_number = $_POST['phone_number'] ?? '';
 
-    if ($username === '' || $password === '') {
+    if ($username === '' || $password === '' || $phone_number === '') {
         $message = 'Пожалуйста, заполните все поля.';
     } else {
         // Сохраняем пароль напрямую (небезопасно!)
-        $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+        $sql = "INSERT INTO users (username, password, phone_number) VALUES (:username, :password, :phone_number)";
         $stmt = $pdo->prepare($sql);
 
         try {
-            $stmt->execute([':username' => $username, ':password' => $password]);
-            $message = "✅ Пользователь успешно зарегистрирован!";
+            $stmt->execute([
+                ':username' => $username,
+                ':password' => $password,
+                ':phone_number' => $phone_number
+            ]);
+            $message = "✅ Вы успешно успешно зарегистрировались!";
         } catch (PDOException $e) {
             if ($e->getCode() == 23000) {
                 $message = "Пользователь с таким именем уже существует.";
@@ -27,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -50,6 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label for="password">Пароль:</label>
         <input type="password" name="password" placeholder="Введите пароль" required>
+
+        <label for="phone_number">Номер телефона:</label>
+        <input type="text" name="phone_number" placeholder="Введите номер телефона" required>
 
         <button type="submit">Зарегистрироваться</button>
     </form>

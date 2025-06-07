@@ -23,7 +23,7 @@ header {
 }
 
 /* Навигационные ссылки */
-nav a {
+/* nav a {
     color: white;
     text-decoration: none;
     margin-left: 15px;
@@ -32,7 +32,7 @@ nav a {
 
 nav a:hover {
     color: #490b00;
-}
+} */
 
 /* Поисковая форма */
 .search-container form {
@@ -65,3 +65,8 @@ nav a:hover {
 .site-title {
     color: #f9c13c;
 }
+
+ a {
+    text-decoration: none;
+    font-weight: bold;
+ }

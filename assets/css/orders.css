@@ -39,17 +39,27 @@
     text-align: left; /* оставляем содержимое выровненным по левому краю */
 }
 
-
 .container {
     max-width: 1200px;
     margin: 0 auto; /* Центрируем весь контент */
     text-align: center;
+    padding: 20px;
 }
 
-.back-link {
-    margin-left: 20px; /* небольшой отступ слева */
+/* .back-link {
+    margin-left: 20px;
     display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+} */
+
+.container a {
+    display: inline-block;
+    margin: 10px 0; /* сверху и снизу по 20px */
     text-decoration: none;
     font-weight: bold;
 }
 
+.container a:hover {
+    text-decoration: underline;
+}

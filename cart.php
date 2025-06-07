@@ -64,10 +64,10 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php include 'header.php'; ?>
     <div class="container">
-        
+    
     <h2>Ваша корзина</h2>
     <a href="index.php" class="back">Назад</a>
-    <p><a href="index.php" class="back-link">← Назад в магазин</a></p>
+    
 
     <?php if (empty($cartItems)): ?>
         <p>Корзина пуста.</p>

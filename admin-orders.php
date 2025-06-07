@@ -4,46 +4,47 @@ session_start();
 
 $user = $_SESSION['user'] ?? null;
 
-if (!$user) {
+if (!$user || $user['role'] !== 'admin') {
     header('Location: login.php');
     exit;
 }
 
-$user_id = $user['id'];
-
-// Получаем все заказы пользователя
-$stmt = $pdo->prepare("SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC");
-$stmt->execute([$user_id]);
+// Получаем все заказы всех пользователей
+$stmt = $pdo->prepare("
+    SELECT o.*, u.username 
+    FROM orders o
+    JOIN users u ON o.user_id = u.id
+    ORDER BY o.created_at DESC
+");
+$stmt->execute();
 $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мои заказы</title>
+    <title>Заказы клиентов</title>
     <link rel="stylesheet" href="assets/css/orders.css">
     <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body>
 
-<?php include 'header.php'; ?>
-
+<?php include 'admin-header.php'; ?>
 
 
 
 <div class="container">
-    <h2>Мои заказы</h2>
+    <h2>Все заказы клиентов</h2>
 
-<a href="index.php" class="back-link">Назад</a>
-
+<a href="admin-page.php" class="back-link">Назад</a>
 <?php if (empty($orders)): ?>
-    <p>У вас пока нет заказов.</p>
+    <p>Нет заказов.</p>
 <?php else: ?>
     <?php foreach ($orders as $order): ?>
         <div class="order">
             <h3>Заказ #<?= $order['id'] ?> — <?= $order['created_at'] ?></h3>
+            <p><strong>Пользователь:</strong> <?= htmlspecialchars($order['username']) ?></p>
             <p><strong>Сумма:</strong> <?= $order['total_price'] ?> ₽</p>
 
             <?php
@@ -81,8 +82,6 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
-
 </div>
-
 </body>
 </html>
