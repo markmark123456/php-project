@@ -50,7 +50,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <h2><?= htmlspecialchars($product['title']) ?></h2>
                     <p><?= htmlspecialchars($product['description']) ?></p>
                     <p>Цена: <?= htmlspecialchars($product['price']) ?> сом</p>
-                    <a href="product_page.php?id=<?= $product['id'] ?>">Подробнее</a>
+                    <a href="admin-product_page.php?id=<?= $product['id'] ?>">Подробнее</a>
 
                     <?php if ($user): ?>
                         <form action="add_to_cart.php" method="post">
