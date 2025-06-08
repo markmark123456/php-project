@@ -33,7 +33,7 @@ if ($search) {
 
 <?php include 'header.php'; ?>
 
-<p><a href="index.php" class="back-link">Назад на главную</a></p>
+<p><a href="admin-products.php" class="back-link">Назад на главную</a></p>
 <div class="container">
     <h3>Результаты поиска по запросу: <?= htmlspecialchars($search) ?></h3>
 </div>
@@ -45,6 +45,7 @@ if ($search) {
         <?php else: ?>
         <?php foreach ($products as $product): ?>
             <div class="product">
+                
 
                 <!-- ✅ Блок с картинкой -->
                 <?php if (!empty($product['image'])): ?>
@@ -57,7 +58,7 @@ if ($search) {
                 <p>Цена: <?= htmlspecialchars($product['price']) ?> ₽</p>
                 <p><?= htmlspecialchars($product['description']) ?></p>
 
-                <a href="product_page.php?id=<?= $product['id'] ?>">Подробнее</a>
+                <a href="admin-product_page.php?id=<?= $product['id'] ?>">Подробнее</a>
 
                 <?php if ($user): ?>
                     <form action="add_to_cart.php" method="post">

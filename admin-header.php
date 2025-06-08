@@ -23,7 +23,7 @@ $user = $_SESSION['user'] ?? null;
         </div>
 
         <div class="search-container">
-            <form action="search.php" method="get">
+            <form action="admin-search.php" method="get">
                 <input type="search" id="search" name="search" placeholder="Поиск..." required>
                 <button type="submit">Поиск</button>
             </form>
