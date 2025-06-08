@@ -14,7 +14,7 @@
         <h1>Панель администратора</h1>
         <div class="menu-buttons">
             <a href="admin-products.php" class="admin-button">Управление товарами</a>
-            <a href="admin-orders.php" class="admin-button">Заказы клиентов</a>
+            <a href="admin-orders.php" class="admin-button">Отчет заказов</a>
             <a href="admin-clients.php" class="admin-button">База клиентов</a>
         </div>
     </div>

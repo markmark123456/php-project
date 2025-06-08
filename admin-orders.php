@@ -24,7 +24,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Заказы клиентов</title>
+    <title>Отчет заказов</title>
     <link rel="stylesheet" href="assets/css/orders.css">
     <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
@@ -33,7 +33,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php include 'admin-header.php'; ?>
 
 <div class="container">
-    <h2>Все заказы клиентов</h2>
+    <h2>Ответ заказов</h2>
 
     <a href="admin-page.php" class="back-link">Назад</a>
 

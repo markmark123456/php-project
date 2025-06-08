@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 08, 2025 at 07:13 PM
+-- Generation Time: Jun 08, 2025 at 07:41 PM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -167,7 +167,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `phone_number`) VALUE
 (20, 'akram3', '0559295539', 'user', ''),
 (21, 'akram4', 'akram4', 'user', '0559295539'),
 (22, 'akram4', '12345678', 'user', '0559295539'),
-(23, 'akram5', '$2y$10$HEjdVNET7JsNw8Vp5BZerelEQbuTAflG.gGmHh6ScZP7cXgZ2j77O', 'user', '');
+(23, 'akram5', '1234567891', 'user', '0559295539');
 
 --
 -- Indexes for dumped tables
