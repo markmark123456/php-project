@@ -37,6 +37,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="product-section">
         <h2 class="main_label">Список товаров</h2>
 
+        <?php if ($user && $user['role'] === 'admin'): ?>
+            <div class="admin-buttons" style="margin-bottom: 20px;">
+                <a href="add_product.php" class="btn-admin" style="margin-right: 15px;">➕ Добавить товар</a>
+                <a href="add_category.php" class="btn-admin">📁 Добавить категорию</a>
+            </div>
+        <?php endif; ?>
+
         <div class="product-list">
             <?php foreach ($products as $product): ?>
                 <div class="product">
@@ -61,7 +68,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                             <button type="submit">Добавить в корзину</button>
                         </form>
-
                     <?php else: ?>
                         <p><a href="login.php">Войдите</a>, чтобы добавить в корзину</p>
                     <?php endif; ?>

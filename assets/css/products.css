@@ -77,3 +77,20 @@
 
 /* Остальные стили для продуктов без изменений */
 
+.btn-admin {
+    padding: 8px 12px;
+    background-color: #4285f4;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+.btn-admin:hover {
+    background-color: #3367d6;
+}
+
+.admin-buttons {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
