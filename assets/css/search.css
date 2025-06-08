@@ -42,3 +42,12 @@
 
     font-weight: bold;
 }
+
+.back-link {
+    margin-left: 570px; /* небольшой отступ слева */
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+
+    font-weight: bold;
+}

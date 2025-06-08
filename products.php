@@ -48,7 +48,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php endif; ?>
 
                     <h2><?= htmlspecialchars($product['title']) ?></h2>
-                    <p><?= htmlspecialchars($product['description']) ?></p>
+                    <p><?= htmlspecialchars(mb_substr($product['description'], 0, 20)) ?>...</p>    
                     <p>Цена: <?= htmlspecialchars($product['price']) ?> сом</p>
                     <a href="product_page.php?id=<?= $product['id'] ?>">Подробнее</a>
 

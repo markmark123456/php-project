@@ -43,7 +43,7 @@ if (!$product) {
 <body>
     <?php include 'header.php'; ?>
     
-    <a href="index.php" class="back-link">← Назад к товарам</a>
+    <a href="index.php" class="back-link">Назад к товарам</a>
 
     <div class="product-detail">
         <div class="product-image">
@@ -57,7 +57,7 @@ if (!$product) {
         <div class="product-info">
             <h1><?= htmlspecialchars($product['title']) ?></h1>
             <p><strong>Категория:</strong> <?= htmlspecialchars($product['category_name']) ?></p>
-            <p><strong>Описание:</strong> <?= htmlspecialchars($product['description']) ?></p>
+            <p class="product-description"><strong>Описание:<br></strong> <?= htmlspecialchars($product['description']) ?></p>
             <p><strong>Цена:</strong> <?= htmlspecialchars($product['price']) ?> сом</p>
 
             <?php if ($user): ?>

@@ -8,7 +8,7 @@
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
+    max-width: 700px;
     margin: 30px auto;
     overflow: hidden;
 }
@@ -34,4 +34,43 @@
 
 .product-detail input[type="number"] {
     width: 50px;
+}
+
+.product-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap; /* Сохраняет переносы строк и переносит текст при необходимости */
+}
+
+.back-link {
+    margin-left: 570px; /* небольшой отступ слева */
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.product-info button[type="submit"] {
+    background-color: #28a745; /* приятный зелёный */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.product-info button[type="submit"]:hover {
+    background-color: #218838; /* темнее при наведении */
+    box-shadow: 0 4px 8px rgba(33, 136, 56, 0.3);
+}
+
+.product-info button[type="submit"]:active {
+    background-color: #1e7e34;
+    box-shadow: none;
 }
