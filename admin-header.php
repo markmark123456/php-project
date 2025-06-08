@@ -37,7 +37,7 @@ $user = $_SESSION['user'] ?? null;
         </div>
         <div>
             <?php if (isset($user)): ?>
-                <a href="admin-orders.php">Заказы</a>
+                <a href="admin-page.php">Панель</a>
             <?php endif; ?>
         </div>
 

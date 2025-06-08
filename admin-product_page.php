@@ -67,16 +67,15 @@ if (!$product) {
                         <input type="number" name="quantity" value="1" min="1">
                     </label>
                     <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                    <br><button type="submit">Добавить в корзину</button>
+                    <!-- <br><button type="submit">Добавить в корзину</button> -->
                 </form>
             <?php else: ?>
-                <p><a href="login.php">Войдите</a>, чтобы добавить в корзину</p>
+                <!-- <p><a href="login.php">Войдите</a>, чтобы добавить в корзину</p> -->
             <?php endif; ?>
-            <?php if ($user['username'] === 'admin'): ?>
-                
+  
                 <a href="edit_product.php?id=<?= $product['id'] ?>">✏️ Изменить</a>
                 <a href="delete_product.php?id=<?= $product['id'] ?>" onclick="return confirm('Удалить товар?');">🗑 Удалить</a>
-            <?php endif; ?>
+
 
         </div>
     </div>

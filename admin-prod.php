@@ -43,7 +43,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <a href="add_category.php" class="btn-admin">📁 Добавить категорию</a>
             </div>
         <?php endif; ?>
-
+        <?php if (isset($_GET['added'])): ?>
+            <p class="main_label" style="color: green;">Товар добавлен в корзину!</p>
+        <?php endif; ?>
         <div class="product-list">
             <?php foreach ($products as $product): ?>
                 <div class="product">
@@ -60,24 +62,20 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <a href="admin-product_page.php?id=<?= $product['id'] ?>">Подробнее</a>
 
                     <?php if ($user): ?>
-                        <form action="add_to_cart.php" method="post">
+                        <form action="admin_add_to_cart.php" method="post">
                             <label>
                                 Кол-во:
                                 <input type="number" name="quantity" value="1" min="1">
                             </label>
                             <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                            <button type="submit">Добавить в корзину</button>
+                            <!-- <button type="submit">Добавить в корзину</button> -->
                         </form>
                     <?php else: ?>
-                        <p><a href="login.php">Войдите</a>, чтобы добавить в корзину</p>
+                        <!-- <p><a href="login.php">Войдите</a>, чтобы добавить в корзину</p> -->
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         </div>
-
-        <?php if (isset($_GET['added'])): ?>
-            <p style="color: green;">Товар добавлен в корзину!</p>
-        <?php endif; ?>
     </div>
 
 </div>

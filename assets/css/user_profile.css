@@ -1,0 +1,101 @@
+.user-profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.user-profile-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user-profile-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.user-profile-container input[type="text"],
+.user-profile-container input[type="password"],
+.user-profile-container input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.user-profile-container button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #5c7cfa;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-profile-container button:hover {
+    background-color: #4e6fe3;
+}
+
+.user-profile-container .links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.user-profile-container .links a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #5c7cfa;
+    font-weight: bold;
+}
+
+.user-profile-container .links a:hover {
+    text-decoration: underline;
+}
+
+.user-profile-container .profile-links {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* расстояние между кнопками */
+}
+
+.user-profile-container .profile-links a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #5c7cfa;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(92, 124, 250, 0.5);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.user-profile-container .profile-links a:hover {
+    background-color: #4e6fe3;
+    box-shadow: 0 4px 12px rgba(78, 111, 227, 0.7);
+}
+
+.back-link {
+    margin-left: 600px; /* небольшой отступ слева */
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+
+    font-weight: bold;
+}

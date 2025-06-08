@@ -31,7 +31,7 @@ $user = $_SESSION['user'] ?? null;
 
         <div>
             <?php if (isset($user)): ?>
-                <p>Здравствуйте, <?= htmlspecialchars($user['username'] ?? '') ?>!</p>
+                <p>Здравствуйте, <a href="user_profile.php"> <?= htmlspecialchars($user['username'] ?? '') ?></a>!</p>
                 <a href="logout.php">Выйти</a>
             <?php else: ?>
                 <a href="login.php">Войти</a> | <a href="registration.php">Регистрация</a>
